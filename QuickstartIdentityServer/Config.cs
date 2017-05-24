@@ -2,6 +2,7 @@
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace QuickstartIdentityServer
 {
@@ -88,13 +89,26 @@ namespace QuickstartIdentityServer
                 {
                     SubjectId = "1",
                     Username = "alex",
-                    Password = "password"
+                    Password = "password",
+
+                    // Add custome claims into the Token
+                    Claims = new []
+                    {
+                        new Claim("name", "Alex"),
+                        new Claim("website", "https://Alex.com")
+                    }
                 },
                 new TestUser
                 {
                     SubjectId = "2",
                     Username = "bob",
-                    Password = "password"
+                    Password = "password",
+
+                    Claims = new []
+                    {
+                        new Claim("name", "Bob"),
+                        new Claim("website", "https://bob.com")
+                    }
                 }
             };
         }
