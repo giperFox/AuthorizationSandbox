@@ -59,7 +59,7 @@ namespace QuickstartClient
 
             // request token
             var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
-            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alex", "password", "api1");
 
             if (tokenResponse.IsError)
             {
