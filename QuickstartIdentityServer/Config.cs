@@ -33,6 +33,19 @@ namespace QuickstartIdentityServer
 
                     // scopes that client has access to
                     AllowedScopes = { "api1" }
+                },
+
+                // resource owner password grant client
+                new Client
+                {
+                    ClientId = "ro.client",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "api1" }
                 }
             };
         }
