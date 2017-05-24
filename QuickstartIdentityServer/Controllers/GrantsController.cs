@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 using QuickstartIdentityServer.Models;
 
-namespace QuickstartIdentityServer
+namespace QuickstartIdentityServer.Controllers
 {
     /// <summary>
     /// This sample controller allows a user to revoke grants given to clients

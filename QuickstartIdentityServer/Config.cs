@@ -58,7 +58,7 @@ namespace QuickstartIdentityServer
                 new TestUser
                 {
                     SubjectId = "1",
-                    Username = "alice",
+                    Username = "alex",
                     Password = "password"
                 },
                 new TestUser
