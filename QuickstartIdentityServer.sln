@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickstartClient", "Quickst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickstartWebClient", "QuickstartWebClient\QuickstartWebClient.csproj", "{4F579288-AAEB-4EC4-96C4-1AF92E0E5C49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickstartAspNetIdentity", "QuickstartAspNetIdentity\QuickstartAspNetIdentity.csproj", "{C69F54B6-66EA-4AD5-8AA4-0A68F82F35F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4F579288-AAEB-4EC4-96C4-1AF92E0E5C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F579288-AAEB-4EC4-96C4-1AF92E0E5C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F579288-AAEB-4EC4-96C4-1AF92E0E5C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69F54B6-66EA-4AD5-8AA4-0A68F82F35F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69F54B6-66EA-4AD5-8AA4-0A68F82F35F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69F54B6-66EA-4AD5-8AA4-0A68F82F35F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69F54B6-66EA-4AD5-8AA4-0A68F82F35F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
