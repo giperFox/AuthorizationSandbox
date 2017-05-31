@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using QuickstartAspNetIdentity.Data;
 using QuickstartAspNetIdentity.Models;
 using QuickstartAspNetIdentity.Services;
+using Microsoft.IdentityModel.Tokens;
+using IdentityServer4;
 
 namespace QuickstartAspNetIdentity
 {
@@ -82,6 +84,34 @@ namespace QuickstartAspNetIdentity
             app.UseIdentity();
             // Apply identity server middleware
             app.UseIdentityServer();
+
+
+            /* External Authentication */
+            // Middleware for google authentication
+            app.UseGoogleAuthentication(new GoogleOptions
+            {
+                AuthenticationScheme = "Google",
+                SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
+                ClientId = "356903963954-qb3u2mfnh7cof5420fgsb77ufp6f9t6m.apps.googleusercontent.com",
+                ClientSecret = "BaHI8Ylo5cNgvTYfaV9Q2Kw5"
+            });
+
+            // Middleware for external openid connect authentication (3rd party IdentityServer)
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
+                SignOutScheme = IdentityServerConstants.SignoutScheme,
+
+                DisplayName = "OpenID Connect",
+                Authority = "https://demo.identityserver.io/",
+                ClientId = "implicit",
+
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    NameClaimType = "name",
+                    RoleClaimType = "role"
+                }
+            });
 
             app.UseMvc(routes =>
             {
