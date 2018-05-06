@@ -14,5 +14,12 @@ namespace QuickstartAPI.Controllers
 		{
 			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
 		}
+
+		[HttpGet]
+		[Route("test2")]
+		public IActionResult Test()
+		{
+			return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+		}
 	}
 }
