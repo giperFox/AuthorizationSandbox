@@ -41,9 +41,23 @@ namespace QuickstartAspNetIdentity.Controllers
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-        //
-        // GET: /Account/Login
-        [HttpGet]
+		//
+		// GET: /Account/Login
+		[HttpGet]
+		[AllowAnonymous]
+		[Route("test")]
+		public async Task<IActionResult> Login(string returnUrl = null)
+		{
+			// Clear the existing external cookie to ensure a clean login process
+			await HttpContext.Authentication.SignOutAsync(_externalCookieScheme);
+
+			ViewData["ReturnUrl"] = returnUrl;
+			return View();
+		}
+
+		//
+		// GET: /Account/Login
+		[HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
         {
